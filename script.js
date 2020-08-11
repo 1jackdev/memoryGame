@@ -3,6 +3,7 @@ let firstPick = null;
 let secondPick = null;
 let pickCounter = 0;
 let stopPicks = false;
+let guessCount = 1;
 
 const COLORS = [
   "red",
@@ -103,6 +104,8 @@ function handleCardClick(e) {
     stopPicks = true;
     let testMatch1 = firstPick.className;
     let testMatch2 = secondPick.className;
+    document.getElementById('guess-counter').innerHTML = guessCount;
+    guessCount++;
 
     if (testMatch1 === testMatch2) {
       pickCounter += 2;
