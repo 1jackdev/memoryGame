@@ -128,6 +128,13 @@ function handleCardClick(e) {
   }
 }
 
+
+// when the reset button is clicked
+const resetButton = document.getElementById('reset-button');
+resetButton.addEventListener('click', function(){
+  document.location.href = '';
+})
+
 // when the DOM loads
 createDivsForColors(shuffledColors);
 
