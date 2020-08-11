@@ -1,0 +1,50 @@
+body {
+  background: rgb(255, 255, 255);
+  border: none;
+  display: block;
+}
+
+span {
+  padding: 5px;
+  margin: 0;
+}
+
+#game {
+  width: 90%;
+  left: 7%;
+  position: absolute;
+}
+
+#game div {
+  border: 1px solid black;
+  width: 10%;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0;
+  
+}
+
+h1 {
+  color: rgb(24, 116, 173);
+  text-align: center;
+  font-size: 3rem;
+  
+}
+
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.dark h1 {
+  color: rgb(105, 212, 212);
+}
+
+.dark #game div {
+  border: 1px solid white;
+}
