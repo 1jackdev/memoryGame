@@ -1,27 +1,38 @@
 const gameContainer = document.getElementById("game");
 let firstPick = null;
 let secondPick = null;
-let pickCounter = 0;
 let stopPicks = false;
 let guessCount = 1;
 
 const COLORS = [
-  "red",
-  "blue",
-  "green",
-  "orange",
-  "purple",
-  "cyan",
-  "olive",
-  "pink",
-  "red",
-  "blue",
-  "green",
-  "orange",
-  "purple",
-  "cyan",
-  "olive",
-  "pink",
+  // "red",
+  // "blue",
+  // "green",
+  // "orange",
+  // "purple",
+  // "cyan",
+  // "olive",
+  // "pink",
+  // "red",
+  // "blue",
+  // "green",
+  // "orange",
+  // "purple",
+  // "cyan",
+  // "olive",
+  // "pink",
+  "https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/1428277/pexels-photo-1428277.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/1428277/pexels-photo-1428277.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 ];
 
 // here is a helper function to shuffle an array
@@ -58,7 +69,8 @@ function createDivsForColors(colorArray) {
     const newDiv = document.createElement("div");
 
     // give it a class attribute for the value we are looping over
-    newDiv.classList.add(color);
+
+    newDiv.classList.add(`url(${color})`);
 
     // call a function handleCardClick when a div is clicked on
     newDiv.addEventListener("click", handleCardClick);
@@ -88,7 +100,6 @@ function handleCardClick(e) {
   if (!firstPick || !secondPick) {
     cardClicked.classList.add("picked");
     firstPick = firstPick || cardClicked;
-    pickCounter++;
     // if the target card is the same as firstPick
     // keep secondPick at null
     // otherwise, set secondPick to the target card
@@ -108,9 +119,11 @@ function handleCardClick(e) {
     guessCount++;
 
     if (testMatch1 === testMatch2) {
-      pickCounter += 2;
       firstPick.removeEventListener("click", handleCardClick);
       secondPick.removeEventListener("click", handleCardClick);
+
+      secondPick.classList.remove();
+      secondPick.classList.remove();
       firstPick = null;
       secondPick = null;
       stopPicks = false;
@@ -120,12 +133,12 @@ function handleCardClick(e) {
         secondPick.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
         firstPick.classList.remove("picked");
         secondPick.classList.remove("picked");
-        firstPick.style.background = "center url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
-        secondPick.style.background = "center url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
+        firstPick.style.background = "center /100% 100% no-repeat url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
+        secondPick.style.background = "center /100% 100% no-repeat url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
         firstPick = null;
         secondPick = null;
         stopPicks = false;
-      }, 750);
+      }, 800);
     }
   }
 }
