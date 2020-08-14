@@ -5,8 +5,15 @@ body {
 }
 
 input span {
-  padding: 5px;
+  padding-left: 5px;
   margin: 0;
+}
+
+h1 {
+  color: rgb(24, 116, 173);
+  text-align: center;
+  font-size: 3rem;
+  line-height: 15px;
 }
 
 .guess-div {
@@ -15,13 +22,14 @@ input span {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  font-family: monospace;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   padding-bottom: 5px;
 }
 
 #reset-button {
   height: 3rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   width: 150px;
   background-color: lightcoral;
 }
@@ -29,36 +37,33 @@ input span {
 .guess-div p {
   flex-wrap: wrap;
   padding-right: 5px;
-  padding-left: 200px;
+  padding-left: 250px;
+  margin: 10px 10px;
 }
 
 #game {
-  width: 90%;
-  left: 7%;
+  width: 95%;
+  left: 3%;
   position: absolute;
-  transition: all 0.2s ease-out;
-  transform: scale();
+  padding-bottom: 10px;
 }
 
 #game div {
   border: 1px solid black;
-  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE') no-repeat center;
-  width: 10%;
-  height: 200px;
-  margin: 10px;
+  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE")
+    no-repeat center;
+  background-size: 100% 100%;
+  width: 179px;
+  height: 250px;
   display: inline-block;
-  transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in-out;
   justify-content: center;
   border-radius: 5px;
-  padding: 0;
+  margin-left: 15px;
+  margin-top: 10px;
 }
 
-h1 {
-  color: rgb(24, 116, 173);
-  text-align: center;
-  font-size: 3rem;
-}
-
+/* Dark Mode Alterations */
 .dark {
   background-color: black;
   color: white;
@@ -72,6 +77,45 @@ h1 {
   border: 1px solid white;
 }
 
-.card-back {
-  background: center;
+/* Media Queries */
+@media (max-width: 1024px) {
+  header {
+    padding-top: 10px;
+  }
+
+  #game {
+    width: 100%;
+    position: absolute;
+    left: 1%;
+  }
+  #game div {
+    border: 1px solid black;
+    background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE")
+      no-repeat center;
+    background-size: 100% 100%;
+    width: 143px;
+    height: 200px;
+    margin: 50px 25px;
+    padding: 25px 25px;
+    display: inline-block;
+    transition: all 0.2s ease-out;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  .guess-div {
+    padding: 20px;
+    height: 100px;
+  }
+  .guess-div p {
+    flex-wrap: wrap;
+    padding-right: 20px;
+    padding-left: 150px;
+    margin: 10px 10px;
+  }
+  #reset-button {
+    height: 5rem;
+    font-size: 2rem;
+    width: 200px;
+    background-color: lightcoral;
+  }
 }
