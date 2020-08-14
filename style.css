@@ -36,15 +36,18 @@ input span {
   width: 90%;
   left: 7%;
   position: absolute;
+  transition: all 0.2s ease-out;
+  transform: scale();
 }
 
 #game div {
   border: 1px solid black;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE') no-repeat center;
   width: 10%;
   height: 200px;
   margin: 10px;
   display: inline-block;
-  transition: all 0.1s ease-out;
+  transition: all 0.2s ease-in;
   justify-content: center;
   border-radius: 5px;
   padding: 0;
@@ -67,4 +70,8 @@ h1 {
 
 .dark #game div {
   border: 1px solid white;
+}
+
+.card-back {
+  background: center;
 }

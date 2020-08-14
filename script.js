@@ -59,7 +59,6 @@ function createDivsForColors(colorArray) {
 
     // give it a class attribute for the value we are looping over
     newDiv.classList.add(color);
-    newDiv.style.backgroundImage = `url(${color})`;
 
     // call a function handleCardClick when a div is clicked on
     newDiv.addEventListener("click", handleCardClick);
@@ -105,7 +104,7 @@ function handleCardClick(e) {
     stopPicks = true;
     let testMatch1 = firstPick.className;
     let testMatch2 = secondPick.className;
-    document.getElementById('guess-counter').innerHTML = guessCount;
+    document.getElementById("guess-counter").innerHTML = guessCount;
     guessCount++;
 
     if (testMatch1 === testMatch2) {
@@ -117,10 +116,12 @@ function handleCardClick(e) {
       stopPicks = false;
     } else {
       setTimeout(function () {
-        firstPick.style.backgroundColor = "";
-        secondPick.style.backgroundColor = "";
+        firstPick.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
+        secondPick.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
         firstPick.classList.remove("picked");
         secondPick.classList.remove("picked");
+        firstPick.style.background = "center url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
+        secondPick.style.background = "center url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e66f4fd-97c0-4e2d-a421-842d48663f77/dbmh3ia-1f3099b5-45be-4faa-ba64-c0cba4148776.jpg/v1/crop/w_179,h_250,x_0,y_0,scl_0.0716,q_70,strp/playing_card_back_design__nature_theme_deck_by_sethalanfloyd_dbmh3ia-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDM0IiwicGF0aCI6IlwvZlwvN2U2NmY0ZmQtOTdjMC00ZTJkLWE0MjEtODQyZDQ4NjYzZjc3XC9kYm1oM2lhLTFmMzA5OWI1LTQ1YmUtNGZhYS1iYTY0LWMwY2JhNDE0ODc3Ni5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uHwuEuUiTqODK5N-kXRw43zoFqXVMTl4uGhm4NoAOZE')";
         firstPick = null;
         secondPick = null;
         stopPicks = false;
@@ -129,12 +130,11 @@ function handleCardClick(e) {
   }
 }
 
-
 // when the reset button is clicked
-const resetButton = document.getElementById('reset-button');
-resetButton.addEventListener('click', function(){
-  document.location.href = '';
-})
+const resetButton = document.getElementById("reset-button");
+resetButton.addEventListener("click", function () {
+  document.location.href = "";
+});
 
 // when the DOM loads
 createDivsForColors(shuffledColors);
@@ -156,3 +156,4 @@ darkModeButton.addEventListener("click", function (e) {
   }
   document.body.className = checked ? "dark" : "";
 });
+
